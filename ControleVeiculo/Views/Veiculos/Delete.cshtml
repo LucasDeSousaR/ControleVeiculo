@@ -1,0 +1,52 @@
+﻿@model ControleVeiculo.Models.Veiculo
+@{
+    ViewBag.Title = "Excluir Veículo";
+}
+
+<h2>Excluir Veículo</h2>
+
+<div>
+    <h4>Veículo</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MODELO)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MODELO)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MARCA)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MARCA)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ANO)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ANO)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PRECO)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PRECO)
+        </dd>
+    </dl>
+</div>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <p>
+        Tem certeza que deseja excluir este veículo?
+    </p>
+    <div>
+        <input type="submit" value="Confirmar Exclusão" class="btn btn-danger" /> |
+        @Html.ActionLink("Cancelar", "Index", null, new { @class = "btn btn-default" })
+    </div>
+}
+
+
