@@ -131,6 +131,15 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202311132300499_InitialCreate.cs" />
+    <Compile Include="Migrations\202311132300499_InitialCreate.designer.cs">
+      <DependentUpon>202311132300499_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202311202214225_NomeDaMigracao.cs" />
+    <Compile Include="Migrations\202311202214225_NomeDaMigracao.designer.cs">
+      <DependentUpon>202311202214225_NomeDaMigracao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Veiculos.cs" />
     <Compile Include="Models\VeiculosContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -190,6 +199,14 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202311132300499_InitialCreate.resx">
+      <DependentUpon>202311132300499_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202311202214225_NomeDaMigracao.resx">
+      <DependentUpon>202311202214225_NomeDaMigracao.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

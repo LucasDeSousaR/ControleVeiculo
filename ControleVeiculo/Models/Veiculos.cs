@@ -11,7 +11,7 @@ namespace ControleVeiculo.Models
     {
         [Key]
         public int COD { get; set; }
-
+        public string ImagemUrl { get; set; }
         public string MODELO { get; set; }
         public string MARCA { get; set; }
         public int ANO { get; set; }

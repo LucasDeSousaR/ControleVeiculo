@@ -8,6 +8,7 @@
 <table class="table">
     <tr>
         <th>COD</th>
+        <th>IMAGEM</th>
         <th>MODELO</th>
         <th>MARCA</th>
         <th>ANO</th>
@@ -15,22 +16,23 @@
     </tr>
     @foreach (var veiculo in Model)
     {
-        <tr>
-            <td>@veiculo.COD</td>
-            <td>@veiculo.MODELO</td>
-            <td>@veiculo.MARCA</td>
-            <td>@veiculo.ANO</td>
-            <td>@veiculo.PRECO.ToString("C")</td>
-            <td>
-                @Html.ActionLink("Detalhes", "Details", new { id = veiculo.COD })
-            </td>
-            <td>
-                @Html.ActionLink("Editar", "Edit", new { id = veiculo.COD })
-            </td>
-            <td>
-                @Html.ActionLink("Excluir", "Delete", new { id = veiculo.COD })
-            </td>
-        </tr>
+<tr>
+    <td>@veiculo.COD</td>
+    <td><img src="@veiculo.ImagemUrl" alt="Imagem do Veículo" style="max-width: 100px; max-height: 100px;" /></td>
+    <td>@veiculo.MODELO</td>
+    <td>@veiculo.MARCA</td>
+    <td>@veiculo.ANO</td>
+    <td>@veiculo.PRECO.ToString("C")</td>
+    <td>
+        @Html.ActionLink("Detalhes", "Details", new { id = veiculo.COD })
+    </td>
+    <td>
+        @Html.ActionLink("Editar", "Edit", new { id = veiculo.COD })
+    </td>
+    <td>
+        @Html.ActionLink("Excluir", "Delete", new { id = veiculo.COD })
+    </td>
+</tr>
     }
 </table>
 @using (Html.BeginForm("Search", "Veiculos", FormMethod.Get))
