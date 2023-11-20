@@ -2,13 +2,13 @@
 
 <h2>Resultado da Busca</h2>
 
-<table class="tabela">
+<table class="table">
     <tr>
-        <th>Codigo</th>
-        <th>Modelo</th>
-        <th>Marca</th>
-        <th>Ano</th>
-        <th>Preço</th>
+        <th style="min-width: 50px;">COD</th>
+        <th style="min-width: 100px;">MODELO</th>
+        <th style="min-width: 100px;">MARCA</th>
+        <th style="min-width: 50px;">ANO</th>
+        <th style="min-width: 100px;">PRECO</th>
     </tr>
     @foreach (var item in Model)
     {
@@ -17,7 +17,7 @@
             <td>@item.MODELO</td>
             <td>@item.MARCA</td>
             <td>@item.ANO</td>
-            <td>@item.PRECO</td>
+            <td>@item.PRECO.ToString("C")</td>
         </tr>
     }
 </table>

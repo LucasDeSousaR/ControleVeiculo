@@ -20,7 +20,7 @@
             <td>@veiculo.MODELO</td>
             <td>@veiculo.MARCA</td>
             <td>@veiculo.ANO</td>
-            <td>@veiculo.PRECO</td>
+            <td>@veiculo.PRECO.ToString("C")</td>
             <td>
                 @Html.ActionLink("Detalhes", "Details", new { id = veiculo.COD })
             </td>
