@@ -9,6 +9,7 @@ namespace ControleVeiculo.Models
     public class VeiculosContext : DbContext
     {
         public DbSet<Veiculo> Veiculos { get; set; }
+        public DbSet<Usuario> Usuarios { get; set; }
     }
 
 }

@@ -135,11 +135,16 @@
     <Compile Include="Migrations\202311132300499_InitialCreate.designer.cs">
       <DependentUpon>202311132300499_InitialCreate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202311202214225_NomeDaMigracao.cs" />
-    <Compile Include="Migrations\202311202214225_NomeDaMigracao.designer.cs">
-      <DependentUpon>202311202214225_NomeDaMigracao.cs</DependentUpon>
+    <Compile Include="Migrations\202311202214225_AdicaoImagem.cs" />
+    <Compile Include="Migrations\202311202214225_AdicaoImagem.designer.cs">
+      <DependentUpon>202311202214225_AdicaoImagem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202311211504310_AddUsuarioEntity.cs" />
+    <Compile Include="Migrations\202311211504310_AddUsuarioEntity.designer.cs">
+      <DependentUpon>202311211504310_AddUsuarioEntity.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Usuario.cs" />
     <Compile Include="Models\Veiculos.cs" />
     <Compile Include="Models\VeiculosContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -204,8 +209,11 @@
     <EmbeddedResource Include="Migrations\202311132300499_InitialCreate.resx">
       <DependentUpon>202311132300499_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202311202214225_NomeDaMigracao.resx">
-      <DependentUpon>202311202214225_NomeDaMigracao.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202311202214225_AdicaoImagem.resx">
+      <DependentUpon>202311202214225_AdicaoImagem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202311211504310_AddUsuarioEntity.resx">
+      <DependentUpon>202311211504310_AddUsuarioEntity.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
