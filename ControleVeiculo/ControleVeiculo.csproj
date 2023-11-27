@@ -144,7 +144,6 @@
       <DependentUpon>202311211504310_AddUsuarioEntity.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\Usuario.cs" />
     <Compile Include="Models\Veiculos.cs" />
     <Compile Include="Models\VeiculosContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

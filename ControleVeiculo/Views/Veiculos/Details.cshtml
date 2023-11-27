@@ -10,17 +10,19 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
+            <dd>
+                <div>
+                    <img src="@Model.ImagemUrl" alt="Imagem do Veículo" style="max-width: 300px; max-height: 300px;" />
+                </div>
+            </dd>
+        </dt>
+        <dt>
             @Html.DisplayNameFor(model => model.MODELO)
         </dt>
         <dd>
             @Html.DisplayFor(model => model.MODELO)
         </dd>
-        <dt></dt>
-        <dd>
-            <div>
-                <img src="@Model.ImagemUrl" alt="Imagem do Veículo" style="max-width: 300px; max-height: 300px;" />
-            </div>
-        </dd>
+
         <dt>
             @Html.DisplayNameFor(model => model.MARCA)
         </dt>
@@ -37,11 +39,11 @@
             @Html.DisplayNameFor(model => model.PRECO)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.PRECO)
+            @Html.DisplayFor(model => model.PRECO.ToString("C"))
         </dd>
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Editar", "Edit", new { id = Model.COD }) |
+    <a href="@Url.Action("Edit", new { id = Model.COD })" class="btn btn-primary">Editar</a>
     @Html.ActionLink("Voltar à Lista", "Index")
 </p>

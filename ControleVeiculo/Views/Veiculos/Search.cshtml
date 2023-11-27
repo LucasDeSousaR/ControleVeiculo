@@ -1,28 +1,41 @@
 ﻿@model IEnumerable<ControleVeiculo.Models.Veiculo>
+<style>
+    .card {
+        margin-bottom: 10px;
+        transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+    }
 
+        .card:hover {
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            transform: scale(1.05);
+            z-index: 1;
+        }
+</style>
 <h2>Resultado da Busca</h2>
 
-<table class="table">
-    <tr>
-        <th style="min-width: 50px;">COD</th>
-        <th style="min-width: 50px;">IMAGEM</th>
-        <th style="min-width: 100px;">MODELO</th>
-        <th style="min-width: 100px;">MARCA</th>
-        <th style="min-width: 50px;">ANO</th>
-        <th style="min-width: 100px;">PRECO</th>
-    </tr>
-    @foreach (var item in Model)
+<div class="row">
+    @foreach (var veiculo in Model)
     {
-<tr>
-    <td>@item.COD</td>
-    <td><img src="@item.ImagemUrl" alt="Imagem do Veículo" style="max-width: 100px; max-height: 100px;" /></td>
-    <td>@item.MODELO</td>
-    <td>@item.MARCA</td>
-    <td>@item.ANO</td>
-    <td>@item.PRECO.ToString("C")</td>
-</tr>
+        <div class="col-md-6 mb-4">
+            <div class="card shadow bg-light border rounded">
+                <div class="row no-gutters">
+                    <div class="col-md-6">
+                        <img src="@veiculo.ImagemUrl" class="card-img" alt="@veiculo.MARCA @veiculo.MODELO">
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card-body">
+                            <h5 class="card-title">@veiculo.MARCA @veiculo.MODELO</h5>
+                            <p class="card-text">Ano: @veiculo.COD</p>
+                            <p class="card-text">Ano: @veiculo.ANO</p>
+                            <p class="card-text">Preço: @veiculo.PRECO.ToString("C")</p>
+                            <a href="@Url.Action("Details", new { id = veiculo.COD })" class="btn btn-primary">Detalhes</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     }
-</table>
+</div>
 
 @using (Html.BeginForm("Search", "Veiculos", FormMethod.Get))
 {

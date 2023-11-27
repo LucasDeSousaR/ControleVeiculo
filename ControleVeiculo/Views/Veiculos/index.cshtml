@@ -2,39 +2,45 @@
 @{
     ViewBag.Title = "Lista de Veículos";
 }
+<style>
+    .card {
+        margin-bottom: 10px;
+        transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+    }
 
+        .card:hover {
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            transform: scale(1.05);
+            z-index: 1;
+        }
+</style>
 <h2>Lista de Veículos</h2>
 
-<table class="table">
-    <tr>
-        <th>COD</th>
-        <th>IMAGEM</th>
-        <th>MODELO</th>
-        <th>MARCA</th>
-        <th>ANO</th>
-        <th>PRECO</th>
-    </tr>
+<div class="row">
     @foreach (var veiculo in Model)
     {
-<tr>
-    <td>@veiculo.COD</td>
-    <td><img src="@veiculo.ImagemUrl" alt="Imagem do Veículo" style="max-width: 100px; max-height: 100px;" /></td>
-    <td>@veiculo.MODELO</td>
-    <td>@veiculo.MARCA</td>
-    <td>@veiculo.ANO</td>
-    <td>@veiculo.PRECO.ToString("C")</td>
-    <td>
-        @Html.ActionLink("Detalhes", "Details", new { id = veiculo.COD })
-    </td>
-    <td>
-        @Html.ActionLink("Editar", "Edit", new { id = veiculo.COD })
-    </td>
-    <td>
-        @Html.ActionLink("Excluir", "Delete", new { id = veiculo.COD })
-    </td>
-</tr>
+        <div class="col-md-6 mb-4">
+            <div class="card shadow bg-light border rounded">
+                <div class="row no-gutters">
+                    <div class="col-md-6">
+                        <img src="@veiculo.ImagemUrl" class="card-img" alt="@veiculo.MARCA @veiculo.MODELO">
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card-body">
+                            <h5 class="card-title">@veiculo.MARCA @veiculo.MODELO</h5>
+                            <p class="card-text">COD: @veiculo.COD</p>
+                            <p class="card-text">Ano: @veiculo.ANO</p>
+                            <p class="card-text">Preço: @veiculo.PRECO.ToString("C")</p>
+                            <a href="@Url.Action("Details", new { id = veiculo.COD })" class="btn btn-primary">Detalhes</a>
+                            <a href="@Url.Action("Edit", new { id = veiculo.COD })" class="btn btn-primary">Editar</a>
+                            <a href="@Url.Action("Delete", new { id = veiculo.COD })" class="btn btn-danger">Deletar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     }
-</table>
+</div>
 @using (Html.BeginForm("Search", "Veiculos", FormMethod.Get))
 {
     <p>
