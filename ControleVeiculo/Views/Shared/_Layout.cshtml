@@ -20,8 +20,20 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Inserir", "Create", "Veiculos")</li>
-                    <li>@Html.ActionLink("Pesquisar", "Search", "Veiculos")</li>
+                    <li class="nav-item">@Html.ActionLink("Inserir", "Create", "Veiculos")</li>
+                    <li class="nav-item">@Html.ActionLink("Pesquisar", "Search", "Veiculos")</li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Register">Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Login">Login</a>
+                    </li>
                 </ul>
             </div>
         </div>
